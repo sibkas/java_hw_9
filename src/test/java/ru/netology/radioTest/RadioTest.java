@@ -1,4 +1,5 @@
 package ru.netology.radioTest;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import ru.netology.radio.Radio;
@@ -106,32 +107,32 @@ public class RadioTest {
     @Test
     public void shouldSetStationToMinBoundary() {
         Radio radio = new Radio();
-        radio.setCurrentStation(0); ;
+        radio.setCurrentStation(0);
         Assertions.assertEquals(0, radio.currentStation);
     }
 
     @Test
     public void shouldSetStationToMaxBoundary() {
         Radio radio = new Radio();
-        radio.setCurrentStation(9); ;
+        radio.setCurrentStation(9);
         Assertions.assertEquals(9, radio.currentStation);
     }
+
     @Test
     public void shouldIgnoreStationJustBelowMin() {
         Radio radio = new Radio();
         radio.setCurrentStation(5);
-        radio.setCurrentStation(-15); ;
+        radio.setCurrentStation(-15);
         Assertions.assertEquals(5, radio.currentStation);
     }
+
     @Test
     public void shouldIgnoreStationJustAboveMax() {
         Radio radio = new Radio();
         radio.setCurrentStation(5);
-        radio.setCurrentStation(15); ;
+        radio.setCurrentStation(15);
         Assertions.assertEquals(5, radio.currentStation);
     }
-
-
 
 
 }
