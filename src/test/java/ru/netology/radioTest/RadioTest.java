@@ -7,6 +7,24 @@ import ru.netology.radio.Radio;
 public class RadioTest {
 
     @Test
+    public void shouldSetStationsCountWhenPositive() {
+        Radio radio = new Radio(15);
+        Assertions.assertEquals(15, radio.stationsCount);
+        Assertions.assertEquals(0, radio.currentStation);
+        Assertions.assertEquals(0, radio.currentVolume);
+    }
+
+
+    @Test
+    public void shouldSetDefaultStationsCountWhenZeroOrNegative() {
+        Radio radioZero = new Radio(0);
+        Assertions.assertEquals(10, radioZero.stationsCount);
+
+        Radio radioNegative = new Radio(-5);
+        Assertions.assertEquals(10, radioNegative.stationsCount);
+    }
+
+    @Test
     public void shouldIncreaseVolumeIfBelowMax() {
         Radio radio = new Radio();
         radio.currentVolume = 99;
