@@ -1,9 +1,13 @@
 package ru.netology.radio;
 
+import lombok.Getter;
+
+@Getter
 public class Radio {
     public int currentVolume;
     public int currentStation;
     public int stationsCount;
+
 
     // Конструктор по умолчанию
     public Radio() {
